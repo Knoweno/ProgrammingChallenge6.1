@@ -12,7 +12,7 @@ namespace ProgrammingChallenge6._1.Controllers
         public ClubController(SchoolDbContext db)
         {
             this.db = db;
-
+            
         }
         public async Task<IActionResult> AllClub()
         {

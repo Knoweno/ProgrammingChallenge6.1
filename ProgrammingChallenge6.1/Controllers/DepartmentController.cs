@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProgrammingChallenge6._1.Models;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
+using System.Diagnostics;
+
 
 namespace ProgrammingChallenge6._1.Controllers
 {
@@ -15,14 +18,15 @@ namespace ProgrammingChallenge6._1.Controllers
         public async Task<IActionResult> AllDepartment()
         {
             var department = await db.Departments.ToListAsync();
+            //var department = await  db.Departments.ToListAsync<Department>();
             return View(department);
         }
-        public IActionResult AddDepartmentr()
+        public IActionResult AddDepartment()
         {
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> AddDepartmentr(Department department)
+        public async Task<IActionResult> AddDepartment(Department department)
         {
             db.Add(department);
             await db.SaveChangesAsync();
