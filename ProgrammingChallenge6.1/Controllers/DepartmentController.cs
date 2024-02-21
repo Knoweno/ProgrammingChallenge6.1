@@ -32,5 +32,10 @@ namespace ProgrammingChallenge6._1.Controllers
             await db.SaveChangesAsync();
             return RedirectToAction("AllDepartment");
         }
+        public async Task<IActionResult> DepartmentDetails(int? id)
+        {
+            var department = await db.Departments.SingleOrDefaultAsync(i => i.DepartmentID == id);
+            return View(department);
+        }
     }
 }

@@ -1,0 +1,22 @@
+﻿@model ProgrammingChallenge6._1.Models.Department
+
+<h2>@Model.DepartmentName</h2>
+<table border="1">
+    <tr>
+        <th>Department ID</th>
+        <td>@Model.DepartmentID</td>
+    </tr>
+    <tr>
+        <th>Email</th>
+        <td>@Model.email</td>
+    </tr>
+    <tr>
+        <th>Phone Number</th>
+        <td>@Model.phoneNumber</td>
+    </tr>
+    <tr>
+        <th>Office Location</th>
+        <td>@Model.office</td>
+    </tr>
+</table>
+<p> <a asp-controller="Club" asp-action="AllClub"> Back to List Clubs</a></p>

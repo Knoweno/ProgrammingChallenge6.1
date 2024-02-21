@@ -23,7 +23,10 @@
                     <td>@club.ClubId</td>
                     <td>@club.ClubName</td>
                     <td>@club.No_of_Students</td>
-                    <td>@club.Department.DepartmentName</td>
+                    <td><a asp-controller="Department" asp-action="DepartmentDetails" asp-route-id="@club.Department.DepartmentID">
+                    @club.Department.DepartmentName
+                    </a>
+                    </td>
                 </tr>
             }
         </table>
