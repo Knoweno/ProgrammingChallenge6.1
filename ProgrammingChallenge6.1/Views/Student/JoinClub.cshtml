@@ -1,0 +1,40 @@
+﻿@model ProgrammingChallenge6._1.Models.Enrolment
+
+<p>Enter Student ID to join a club</p>
+<h3> Club Information</h3>
+<table border="1">
+    <tr>
+        <th>Club ID</th>
+        <th>Club Name</th>
+        <th>Number of students </th>
+        <th>Department Name </th>
+    </tr>
+    <tr>
+        <td>@ViewBag.club.ClubId</td>
+        <td>@ViewBag.course.ClubName</td>
+        <td>@ViewBag.course.No_of_Students</td>
+        <td>@ViewBag.course.Department</td>
+    </tr>
+</table>
+@{
+    if (ViewBag.Course.seatCapacity < 1)
+    {
+        <p>This course is sull. Try a different time.</p>
+        <p>
+            <a asp-controller="Club" asp-action="AllClub">
+                Back to Club Listing
+            </a>
+        </p>
+    }
+    else
+    {
+        <form asp-controller="Student"
+              asp-action="JoinClub" method="post">
+            <label asp-for="clubId"></label>
+            <br />
+            <input asp-for="clubId" type="hidden"
+                   value="@ViewBag.course.clubId" />
+            <button type="submit">Join Club</button>
+        </form>
+    }
+}

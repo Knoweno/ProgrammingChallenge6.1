@@ -14,5 +14,7 @@ namespace ProgrammingChallenge6._1.Models
         {
 
         }
+        public DbSet<Student> Students { get; set; }
+        public DbSet<Enrolment> Enrolments { get; set; }
     }
 }
